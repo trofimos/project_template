@@ -1,3 +1,3 @@
 FROM ubuntu
-RUN sudo apt-get update
-RUN sudo apt-get upgrade
+RUN apt-get update
+RUN apt-get upgrade
