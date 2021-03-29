@@ -1,5 +1,3 @@
-FROM node:12-alpine
-WORKDIR /app
-COPY . .
-RUN yarn install --production
-CMD ["node", "/app/src/index.js"]
+FROM ubuntu
+RUN sudo apt-get update
+RUN sudo apt-get upgrade
