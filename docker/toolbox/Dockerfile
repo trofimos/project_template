@@ -1,4 +1,5 @@
-FROM java:8
-COPY eod-report-0.0.1-SNAPSHOT.jar /opt
-ENTRYPOINT ["/usr/bin/java", "-jar"]
-CMD ["/opt/eod-report-0.0.1-SNAPSHOT.jar", "--server.port=8080"]
+FROM node:12-alpine
+WORKDIR /app
+COPY . .
+RUN yarn install --production
+CMD ["node", "/app/src/index.js"]
