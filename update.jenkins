@@ -11,12 +11,12 @@ pipeline {
         timestamps()
     }
     stages {
-        stage("First step") {
+        stage("UPDATE") {
             steps {
                 sh 'ssh root@docker \'sudo apt-get update & sudo apt-get upgrade\''
             }
         }
-        stage("Second step") {
+        stage("UPGRADE") {
             steps {
                 sh 'ssh root@docker \'uptime\''
             }
