@@ -1,6 +1,5 @@
-FROM centos:7
-RUN yum install -y epel-release && yum install -y nginx
-RUN yum clean all
-RUN echo "daemon off;" >> /etc/nginx/nginx.conf
-RUN sed -i "0,/nginx/s/nginx/docker-nginx/i" /usr/share/nginx/html/index.html
-CMD [ "nginx" ]
+FROM java:8
+MAINTAINER User "user@domain.com"
+COPY eod-report-0.0.1-SNAPSHOT.jar /opt
+ENTRYPOINT ["/usr/bin/java", "-jar"]
+CMD ["/opt/eod-report-0.0.1-SNAPSHOT.jar", "--server.port=8080"]
